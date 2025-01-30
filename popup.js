@@ -5,3 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.runtime.sendMessage({ action: 'goToToday' });
   });
 });
+// Auto-launch when URL has ?autolaunch=true
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.has('autolaunch')) {
+    goToToday();
+}
