@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Class Schedule Navigator",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "scripting","tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+  {
+    "matches": ["https://docs.google.com/spreadsheets/d/1rnoI6RR1dtvzD5FD7Hs7CLtvADznk3wBIyCdIK9tQ0M/edit?gid=0#gid=0"],
+    "js": ["contentScript.js"],
+    "run_at": "document_end"
+  }
+]
+}
