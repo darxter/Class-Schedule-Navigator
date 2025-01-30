@@ -62,5 +62,10 @@
   <button id="goToToday">Go to Today's Schedule</button>
   <div id="schedule"></div>
   <script src="popup.js"></script>
+  // Auto-launch when URL has ?autolaunch=true
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.has('autolaunch')) {
+    goToToday();
+}
 </body>
 </html>
